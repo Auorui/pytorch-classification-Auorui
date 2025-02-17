@@ -19,8 +19,6 @@ def parse_args(known=False):
                         help="resume training from last checkpoint")
     # 日志文件存放路径
     parser.add_argument('--log_dir',  type=str, default=r'./logs', help='log file path')
-    # 分类个数
-    parser.add_argument('--num_classes',  type=int, default=5, help='classification number')
     # 数据集路径
     parser.add_argument('--dataset_path', type=str, default=r'D:\PythonProject\pytorch_classification_Auorui\data\flower_data', help='dataset path')
     # 训练轮次epochs次数，默认为100轮
@@ -151,9 +149,14 @@ if __name__=="__main__":
     loss_log_dir, save_model_dir, timelog_dir=loss_weights_dirs(args.log_dir)
     redirect_console(os.path.join(timelog_dir, 'out.log'))
     show_config(head="Auorui's custom classification training template", args=args)
-    
-    network = get_networks(args.model, args.num_classes, weights=args.resume_training)
-    criterion = get_criterion(num_classes=args.num_classes)
+    train_dataset = ClassificationDataset(args.dataset_path, target_shape=args.input_shape,
+                                            is_train=True)
+    val_dataset = ClassificationDataset(args.dataset_path, target_shape=args.input_shape,
+                                            is_train=False)
+    num_classes = train_dataset.num_classes
+
+    network = get_networks(args.model, num_classes, weights=args.resume_training)
+    criterion = get_criterion(num_classes=num_classes)
     optimizer = get_optimizer(
         network,
         optimizer_type=args.optimizer_type,
@@ -166,10 +169,7 @@ if __name__=="__main__":
         network, total_epoch=args.epochs, loss_function=criterion,
         optimizer=optimizer, lr_scheduler=lr_scheduler
     )
-    train_dataset = ClassificationDataset(args.dataset_path, target_shape=args.input_shape,
-                                            is_train=True)
-    val_dataset = ClassificationDataset(args.dataset_path, target_shape=args.input_shape,
-                                            is_train=False)
+
     train_loader = DataLoader(train_dataset, batch_size=args.batch_size, pin_memory=False,
                               num_workers=num_worker(args.batch_size),
                               shuffle=True,  drop_last=True)

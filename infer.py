@@ -15,7 +15,6 @@ from utils.tools import load_owned_device, release_gpu_memory, multi_makedirs
 
 flower_data = ["daisy", "dandelion", "roses", "sunflowers", "tulips"]
 base = ["crack", "rust", "spalling", "stoma"]
-
 cat_dog = ["cats", "dogs"]
 
 def parse_args(known=False):
