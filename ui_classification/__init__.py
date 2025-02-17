@@ -1,0 +1,1 @@
+from .load_image import Ui_ImageClassification
