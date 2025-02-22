@@ -19,9 +19,9 @@ This project supports only binary and multi-class classification tasks. In multi
 
 **Contact: zjricetea@gmail.com (use the 'vx' for WeChat contact, welcome to exchange and learn)**
 
-**CSDN Blog Tutorial:**
+**CSDN Blog Tutorial:[A deep learning project suitable for beginners - Pytorch based image classification system](https://blog.csdn.net/m0_62919535/article/details/145713389) (Provided detailed supplements to the project)**
 
-**Bilibili Tutorial:**
+**Bilibili Tutorial:[Pytorch based image classification system, the most suitable project for beginners](https://www.bilibili.com/video/BV1kSPTe4EQa/)**
 
 ## Training Script
 **./train.py**
