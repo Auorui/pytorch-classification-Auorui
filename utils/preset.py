@@ -1,7 +1,6 @@
 """
 用于测试在ui中的检测是否正常
 """
-
 import os
 import cv2
 import torch

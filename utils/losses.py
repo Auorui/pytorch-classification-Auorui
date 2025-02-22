@@ -21,7 +21,7 @@ class FocalLoss(nn.Module):
         log_probs = F.log_softmax(input,dim=1)
         
         class_probs = probs.gather(dim=1, index=labels.unsqueeze(1)).squeeze(1)
-        log_class_probs = log_probs.gather(dim=1,index=labels.unsqueeze(1)).squeeze(1)
+        log_class_probs = log_probs.gather(dim=1, index=labels.unsqueeze(1)).squeeze(1)
         focal_factor = (1 - class_probs) ** self.gamma
         focal_loss = -self.alpha*focal_factor*log_class_probs
         

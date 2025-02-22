@@ -112,7 +112,7 @@ def show_image_from_dataloader(test_dataset):
 
 if __name__=="__main__":
     from torchvision import transforms
-    data_path = r'E:\PythonProject\pytorch_classification_Auorui\data\base'
+    data_path = r'E:\PythonProject\pytorch_classification_Auorui\data\cat_dog'
     train_dataset = ClassificationDataset(root_dir=data_path, target_shape=[256, 256], is_train=True)
     val_dataset = ClassificationDataset(root_dir=data_path, target_shape=[256, 256], is_train=False)
     print("训练集数量：", len(train_dataset), "训练集数量", len(val_dataset))
@@ -122,7 +122,7 @@ if __name__=="__main__":
     # for batch in val_dataset:
     #     image, label = batch
     #     print(image.shape, label)
-    # show_image_from_dataloader(train_dataset)
+    show_image_from_dataloader(train_dataset)
 
 
     transform = transforms.Compose([
@@ -136,7 +136,7 @@ if __name__=="__main__":
     ])
     train_dataset = ClassificationDataset(root_dir=data_path, target_shape=[256, 256], is_train=True,
                                           transform=transform)
-    show_image_from_dataloader(train_dataset)
+    # show_image_from_dataloader(train_dataset)
     # for batch in train_dataset:
     #     image, label = batch
     #     print(image.shape, label)

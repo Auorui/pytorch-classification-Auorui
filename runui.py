@@ -14,10 +14,8 @@ import numpy as np
 from models import get_networks_for_ui
 from natsort import natsorted
 
-from ui_classification.load_image import Ui_ImageClassification
+from utils.load_image import Ui_ImageClassification
 from utils import PutRectangleText, ClassificationMetricIndex, load_owned_device
-
-
 
 flower_data = ["daisy", "dandelion", "roses", "sunflowers", "tulips"]
 base = ["crack", "rust", "spalling", "stoma"]
@@ -36,7 +34,7 @@ title_ = "基于Pytorch的花卉分类"
 
 def detect_image_ui(image, img_path, mindex):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    network = get_networks_for_ui(models, num_classes, weights_path).to(device)
+    network = get_networks_for_ui(models, num_classes, weights_path)
     category = natsorted(categories)
     nw, nh = input_shape
     image = cv2.resize(image, (nw, nh), interpolation=cv2.INTER_CUBIC)

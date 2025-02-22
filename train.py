@@ -126,7 +126,7 @@ class ClassificationTrainEpoch():
         print('Epoch:' + str(epoch) + '/' + str(self.total_epoch))
         print('Total Loss: %.5f || Val Loss: %.5f || acc: %.5f' % (train_loss, val_loss, metric))
         
-        # 如果你想要选择其他的指标作为保存的策略 (比如这里提供的acc)，可以直接在此处修改即可
+        # 如果你想要选择其他的指标作为保存的策略 (比如这里提供的acc)，可以直接在此处修改即可，添加一个初始化最小值即可
         if epoch % save_period == 0:
             torch.save(self.model.state_dict(), os.path.join(save_dir,
             f"epoch{epoch}_train{train_loss:.2f}_val{val_loss:.2f}.pth"))

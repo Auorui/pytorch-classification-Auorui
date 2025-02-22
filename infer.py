@@ -23,14 +23,14 @@ def parse_args(known=False):
 	parser.add_argument('--model', default='mobilenet_v2', type=str, help='model name')
 	# 检测的图像类别
 	parser.add_argument('--categories',
-						default=flower_data,
+						default=cat_dog,
 						type=list, help='classification category')
 	# 图像的文件夹和单张路径预测
-	parser.add_argument('--image_path',default=r'E:\PythonProject\pytorch_classification_Auorui\data\flower_data\test',type=str,
+	parser.add_argument('--image_path',default=r'E:\PythonProject\Pytorch_Classification_Auorui\data\cat_dog\test',type=str,
 						help='Image path or image folder path')
 	# 加载训练好的模型权重
 	parser.add_argument('--weights', type=str,
-						default=r"E:\PythonProject\pytorch_classification_Auorui\logs\2025_02_11_17_24_54\weights\best_model.pth",
+						default=r"E:\PythonProject\pytorch_classification_Auorui\logs\2025_01_27_23_01_10\weights\best_model.pth",
 						help="Trained model weights")
 	# 图片大小
 	parser.add_argument('--input_shape', default=[224, 224],help='input image shape')

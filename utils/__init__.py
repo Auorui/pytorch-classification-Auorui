@@ -18,3 +18,4 @@ from .optim import get_optimizer, get_lr_scheduler, get_lr
 from .losses import get_criterion, DiceLoss, FocalLoss
 from .records import AverageMeter, LossHistory, ConsoleLogger, redirect_console
 from .loader import ClassificationDataset, show_image_from_dataloader
+from .load_image import Ui_ImageClassification
