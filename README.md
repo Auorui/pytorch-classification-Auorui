@@ -19,9 +19,9 @@
 
 **联系方式：zjricetea@gmail.com('@'前为vx号，欢迎交流与学习)**
 
-**CSDN博文教程：**
+**CSDN博文教程：[适合初学者的深度学习项目——基于Pytorch的图像分类系统](https://blog.csdn.net/m0_62919535/article/details/145713389) (对项目做了详细的补充)**
 
-**B站教程：**
+**B站教程：[基于Pytorch的图像分类系统，最适合初学者的项目](https://www.bilibili.com/video/BV1kSPTe4EQa/)**
 
 ## 训练脚本
 **./train.py**
@@ -131,7 +131,7 @@ Probability: 99.13%
 
 多分类 ：[花卉分类](https://github.com/WZMIAOMIAO/deep-learning-for-image-processing/tree/master/data_set)
 
-二者均为演示示例, 你可以根据自己的需求来完成你的项目。下载好后放入 **./data** 文件加下
+二者均为演示示例, 你可以根据自己的需求来完成你的项目。下载好后放入 **./data** 文件夹下
 
 ### 标准数据集格式
     data
@@ -145,9 +145,9 @@ Probability: 99.13%
             -test
 标准训练集如上所示, 训练集和验证集必须存在, 但测试集不一定要有。
 ### 划分脚本
-
+脚本在 **./data/split_data.py**,
 这里以花卉数据集为例, 只需要修改目标文件夹以及保存路径, 运行即可。
-如果数据集不够, 可将测试集比例设置为 0 , 即不划分测试集, 仅划分训练集和测试集。
+如果数据集不够, 可将测试集比例设置为 0 , 即不划分测试集, 仅划分训练集和验证集。
 
     flower_photos                    
         - daisy                                      flower_data

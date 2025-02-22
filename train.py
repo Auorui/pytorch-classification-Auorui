@@ -36,7 +36,7 @@ def parse_args(known=False):
     # 用于优化器的权重衰减参数，用于抑制权重的过度增长，防止过拟合。
     parser.add_argument('--weight_decay', type=float, default=1e-4, help='Weight decay for optimizer')
     # 优化器选择，可选adam、adamw、sgd
-    parser.add_argument('--optimizer_type', type=str, default="adam", help='Optimizer selection, optional adam、adamw and sgd')
+    parser.add_argument('--optimizer_type', type=str, default="adamw", help='Optimizer selection, optional adam、adamw and sgd')
     # 支持多步骤下降和余弦退火，cos 和 step 和 multistep 和 warmup, 推荐使用 cos
     parser.add_argument('--lr_schedule_type', type=str, default="cos", help='Learning rate descent algorithm')
     # 训练过程中的保存pth文件频率, 不宜太频繁
